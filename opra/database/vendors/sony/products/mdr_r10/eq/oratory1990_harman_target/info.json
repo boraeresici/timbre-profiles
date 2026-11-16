@@ -1,0 +1,53 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/ywxuq1uce4tztw7/Sony%20MDR-R10.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.5,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 200,
+        "gain_db": -2,
+        "q": 0.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 400,
+        "gain_db": 1,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1000,
+        "gain_db": -1.9,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1770,
+        "gain_db": -4.3,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3300,
+        "gain_db": 5,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5500,
+        "gain_db": -3.5,
+        "q": 4
+      }
+    ]
+  }
+}

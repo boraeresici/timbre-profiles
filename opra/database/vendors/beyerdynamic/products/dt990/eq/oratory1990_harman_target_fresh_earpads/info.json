@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • fresh earpads",
+  "link": "https://www.dropbox.com/scl/fi/q7jvzymphpiu40l3byuu0/Beyerdynamic-DT990-fresh-earpads.pdf?rlkey=i9hffk09z3rnb1zzeyq4bihvv&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 60,
+        "gain_db": -4.9,
+        "q": 0.5
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 190,
+        "gain_db": -4.1,
+        "q": 0.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 350,
+        "gain_db": 1.4,
+        "q": 1.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 660,
+        "gain_db": 1.7,
+        "q": 1.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1100,
+        "gain_db": -1.5,
+        "q": 2
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 2500,
+        "gain_db": -3.5,
+        "q": 0.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3400,
+        "gain_db": -1.5,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6050,
+        "gain_db": -5.2,
+        "q": 4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 8000,
+        "gain_db": -4,
+        "q": 1
+      }
+    ]
+  }
+}

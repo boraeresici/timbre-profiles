@@ -1,0 +1,65 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/4w574dgee0on6s23u3x5q/Koss-Porta-Pro.pdf?rlkey=5qs41i0wx3qax9u9s8lq8dyrr&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.3,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 80,
+        "gain_db": -5.3,
+        "q": 0.7
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 195,
+        "gain_db": -4.1,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2050,
+        "gain_db": -4.6,
+        "q": 1.1
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 5,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4800,
+        "gain_db": 4.5,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5350,
+        "gain_db": -11,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9700,
+        "gain_db": -6,
+        "q": 7
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -1,
+        "q": 0.71
+      }
+    ]
+  }
+}

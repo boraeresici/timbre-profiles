@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/30tplmzojj4a10tfyzt3e/Abyss-AB-1266-Phi-TC.pdf?rlkey=knd6e7ecdb16o1xxyptl86g8c&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.5,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 40,
+        "gain_db": -1.5,
+        "q": 0.6
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 260,
+        "gain_db": -1.6,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 480,
+        "gain_db": 1.5,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1050,
+        "gain_db": -4.6,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1950,
+        "gain_db": 4,
+        "q": 2.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3500,
+        "gain_db": 4,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4000,
+        "gain_db": 4,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5200,
+        "gain_db": -5.4,
+        "q": 4.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 9000,
+        "gain_db": -9,
+        "q": 0.71
+      }
+    ]
+  }
+}

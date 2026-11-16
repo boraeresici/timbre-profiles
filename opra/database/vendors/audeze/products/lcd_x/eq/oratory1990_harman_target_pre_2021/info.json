@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • pre 2021",
+  "link": "https://www.dropbox.com/s/vwxupe4gxczewff/Audeze%20LCD-X%20%28pre%202021%29.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -11.2,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 30,
+        "gain_db": 2.5,
+        "q": 0.71
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 220,
+        "gain_db": -0.8,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 700,
+        "gain_db": -0.6,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1020,
+        "gain_db": -1.9,
+        "q": 2
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 1450,
+        "gain_db": 7,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2480,
+        "gain_db": -0.9,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3800,
+        "gain_db": 6,
+        "q": 1.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5500,
+        "gain_db": -7,
+        "q": 2.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -8,
+        "q": 0.71
+      }
+    ]
+  }
+}

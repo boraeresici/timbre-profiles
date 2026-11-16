@@ -1,0 +1,53 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/xvc4qkum1gwmx6dsmh5b1/Hifiman-Ananda-Stealth.pdf?rlkey=bmks9vwnpu22j2tnhd6527q60&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.5,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 70,
+        "gain_db": -1.6,
+        "q": 0.7
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 990,
+        "gain_db": -2.2,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2000,
+        "gain_db": 5.6,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3000,
+        "gain_db": -4.9,
+        "q": 1.9
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6500,
+        "gain_db": -2,
+        "q": 5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 9000,
+        "gain_db": -2,
+        "q": 0.71
+      }
+    ]
+  }
+}

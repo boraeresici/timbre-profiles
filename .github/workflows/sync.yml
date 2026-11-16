@@ -1,0 +1,69 @@
+name: Sync OPRA
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+    inputs:
+      allow_deletions:
+        description: "Accept a large upstream deletion (review the alert issue first)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Mirror OPRA
+        id: sync
+        run: |
+          set +e
+          python3 scripts/sync_opra.py ${{ inputs.allow_deletions && '--allow-deletions' || '' }}
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+
+      - name: Commit
+        if: steps.sync.outputs.code == '0'
+        run: |
+          git config user.name "timbre-sync[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A opra manifest.json
+          if git diff --cached --quiet; then echo "Nothing to commit"; exit 0; fi
+          rev=$(python3 -c "import json;print(json.load(open('manifest.json'))['sourceRevision'][:12])")
+          git commit -q -F - <<EOF
+          Mirror OPRA ${rev}
+
+          $(cat .sync-report.md)
+          EOF
+          git push
+
+      - name: Alert
+        if: steps.sync.outputs.code != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create sync-alert --color B60205 --description "Mirror needs attention" --force >/dev/null
+          title="Sync alert: $(head -1 .sync-report.md | sed 's/^## //')"
+          body="$(cat .sync-report.md)"$'\n\n'"Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          open=$(gh issue list --label sync-alert --state open --json number,title --jq ".[] | select(.title == \"$title\") | .number" | head -1)
+          if [ -n "$open" ]; then gh issue comment "$open" --body "$body"; else gh issue create --title "$title" --label sync-alert --body "$body"; fi
+          exit 1
+
+      - name: Close resolved alerts
+        if: steps.sync.outputs.code == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for n in $(gh issue list --label sync-alert --state open --json number --jq '.[].number'); do
+            gh issue close "$n" --comment "Resolved by run ${{ github.run_id }}."
+          done
